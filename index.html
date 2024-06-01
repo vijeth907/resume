@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<center><html lang="en">
+<center><head>
+<meta charset="UTF-8">
+<style>
+  body {
+    background-color: lightblue;
+  }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Text to Speech</title>
+
+<script>
+    // Function to initialize the speech synthesis
+    function speakText() {
+        // Get the text input by the user
+        var text = document.getElementById("text-to-speak").value;
+
+        // Check if the browser supports speech synthesis
+        if ('speechSynthesis' in window) {
+            // Create a new instance of SpeechSynthesisUtterance
+            var msg = new SpeechSynthesisUtterance();
+            
+            // Set the text that will be spoken
+            msg.text = text;
+
+            // Use the default voice
+            msg.voice = speechSynthesis.getVoices()[0];
+
+            // Speak the text
+            speechSynthesis.speak(msg);
+        } else {
+            // If speech synthesis is not supported, display an error message
+            alert("Sorry, your browser doesn't support text to speech!");
+        }
+    }
+</script>
+</head>
+<body>
+    <h1>Text to Speech</h1>
+    <textarea id="text-to-speak" rows="4" cols="50" placeholder="Enter text to speak..."></textarea>
+    <br>
+    <p style="color: bule;"><button onclick="speakText()">Speak</button></p>
+<p style="color: red;">
+<buttom>created by mr_Vlegend</buttom></p>
+</body>
+<a href="https://youtube.com/@thezaxoff?si=tuJKT5oCIFxXjwuU">MY    YOUTUBE CHANNEL</a>
+</html></center>
